@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURSELL FARMS 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #1a2e1a;
+    --green-mid: #2d5016;
+    --green-accent: #4a7c2f;
+    --green-light: #6aaa3a;
+    --cream: #f5f0e8;
+    --cream-dark: #ede6d6;
+    --gold: #c8a84b;
+    --gold-light: #e8c96a;
+    --text-dark: #1a1a18;
+    --text-mid: #3d3d38;
+    --text-light: #6b6b64;
+    --white: #ffffff;
+    --border: rgba(74, 124, 47, 0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--green-dark);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(26, 46, 26, 0.97);
+    border-bottom: 1px solid rgba(200, 168, 75, 0.3);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.15rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(245, 240, 232, 0.7);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.55rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--cream);
+    background: rgba(200, 168, 75, 0.15);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(74, 124, 47, 0.25) 0%, transparent 65%),
+      var(--green-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(74, 124, 47, 0.04) 60px,
+        rgba(74, 124, 47, 0.04) 61px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(74, 124, 47, 0.04) 60px,
+        rgba(74, 124, 47, 0.04) 61px
+      );
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 span {
+    color: var(--green-light);
+    display: block;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.3rem;
+  }
+
+  .hero-dates {
+    font-size: 1rem;
+    color: rgba(245, 240, 232, 0.6);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5);
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem;
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    scroll-margin-top: 80px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(200, 168, 75, 0.15);
+    margin: 0 2rem;
+  }
+
+  /* ROSTER */
+  .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .player-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200, 168, 75, 0.15);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    transition: all 0.2s;
+  }
+
+  .player-card:hover {
+    background: rgba(200, 168, 75, 0.08);
+    border-color: rgba(200, 168, 75, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .player-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    border: 1px solid rgba(200, 168, 75, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .player-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  .player-hcp {
+    font-size: 0.78rem;
+    color: var(--green-light);
+    margin-top: 0.15rem;
+    font-weight: 400;
+  }
+
+  /* ROOMING */
+  .rooming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .room-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200, 168, 75, 0.15);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .room-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .room-note {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: rgba(200, 168, 75, 0.15);
+    color: var(--gold-light);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .room-players {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .room-player {
+    font-size: 0.875rem;
+    color: rgba(245, 240, 232, 0.85);
+    font-weight: 400;
+  }
+
+  /* TEE TIMES */
+  .tee-day {
+    margin-bottom: 3rem;
+  }
+
+  .tee-day-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .tee-day-date {
+    font-size: 0.72rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(200, 168, 75, 0.12);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .tee-round-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(200, 168, 75, 0.1);
+  }
+
+  .tee-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tee-group {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    align-items: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200, 168, 75, 0.1);
+    border-radius: 8px;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .tee-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .tee-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tee-player-pill {
+    font-size: 0.78rem;
+    background: rgba(74, 124, 47, 0.25);
+    border: 1px solid rgba(74, 124, 47, 0.4);
+    color: rgba(245, 240, 232, 0.9);
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+
+  .tee-section-header {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tee-section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(106, 170, 58, 0.2);
+  }
+
+  /* COURSE */
+  .course-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(200, 168, 75, 0.1);
+  }
+
+  .course-subtitle {
+    font-size: 0.85rem;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .course-description {
+    font-size: 1rem;
+    color: rgba(245, 240, 232, 0.75);
+    line-height: 1.8;
+    max-width: 72ch;
+  }
+
+  .course-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    min-width: 200px;
+  }
+
+  .course-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200, 168, 75, 0.12);
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .course-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+  }
+
+  .course-stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245, 240, 232, 0.4);
+    margin-top: 0.15rem;
+    display: block;
+  }
+
+  /* HOLES */
+  .holes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .hole-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200, 168, 75, 0.1);
+    border-radius: 10px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .hole-card:hover {
+    background: rgba(200, 168, 75, 0.06);
+    border-color: rgba(200, 168, 75, 0.25);
+  }
+
+  .hole-card.expanded {
+    border-color: rgba(200, 168, 75, 0.3);
+    background: rgba(200, 168, 75, 0.05);
+  }
+
+  .hole-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .hole-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--green-accent);
+    line-height: 1;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .hole-info { flex: 1; }
+
+  .hole-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+    font-style: italic;
+  }
+
+  .hole-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .hole-par {
+    font-size: 0.72rem;
+    background: rgba(74, 124, 47, 0.3);
+    color: var(--green-light);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hole-toggle {
+    font-size: 0.65rem;
+    color: rgba(245, 240, 232, 0.35);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .hole-card:hover .hole-toggle { color: var(--gold); }
+
+  .hole-story {
+    font-size: 0.85rem;
+    color: rgba(245, 240, 232, 0.6);
+    line-height: 1.7;
+    margin-top: 0.75rem;
+    display: none;
+    border-top: 1px solid rgba(200, 168, 75, 0.1);
+    padding-top: 0.75rem;
+  }
+
+  .hole-card.expanded .hole-story { display: block; }
+
+  .hole-tip {
+    font-size: 0.82rem;
+    color: rgba(200, 168, 75, 0.9);
+    background: rgba(200, 168, 75, 0.08);
+    border-left: 2px solid var(--gold);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 0.75rem;
+    line-height: 1.6;
+    display: none;
+  }
+
+  .hole-card.expanded .hole-tip { display: block; }
+
+  /* WEATHER */
+  .weather-embed {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200, 168, 75, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    color: rgba(245, 240, 232, 0.5);
+    font-size: 0.875rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(200, 168, 75, 0.1);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.72rem;
+    color: rgba(245, 240, 232, 0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer a {
+    color: rgba(200, 168, 75, 0.5);
+    text-decoration: none;
+  }
+
+  footer a:hover { color: var(--gold); }
+
+  /* FULL BG SECTION */
+  .full-bg-section {
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(200, 168, 75, 0.08);
+    border-bottom: 1px solid rgba(200, 168, 75, 0.08);
+  }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .badge-gold {
+    background: rgba(200, 168, 75, 0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(200, 168, 75, 0.2);
+  }
+
+  .badge-green {
+    background: rgba(74, 124, 47, 0.2);
+    color: var(--green-light);
+    border: 1px solid rgba(74, 124, 47, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    .course-header { grid-template-columns: 1fr; }
+    .course-stats { grid-template-columns: repeat(4, 1fr); min-width: unset; }
+    .hero-stats { gap: 2rem; }
+    .tee-group { grid-template-columns: 75px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Pursell Farms '26</a>
+    <ul class="nav-links">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#roster">Teams</a></li>
+      <li><a href="#rooming">Rooming</a></li>
+      <li><a href="#teetimes">Tee Times</a></li>
+      <li><a href="#course">The Course</a></li>
+      <li><a href="#weather">Weather</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="home" style="scroll-margin-top: 80px;">
+  <div class="hero">
+    <p class="hero-eyebrow">FarmLinks Golf Club · Sylacauga, Alabama</p>
+    <h1>Pursell Farms<span>Jacob's Bachelor Party</span></h1>
+    <p class="hero-dates">June 26 – June 28, 2026</p>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">16</span>
+        <span class="hero-stat-label">Players</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">2</span>
+        <span class="hero-stat-label">Nights</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">2</span>
+        <span class="hero-stat-label">Rounds</span>
+      </div>
+    </div>
+    <p style="font-size:0.8rem; color: rgba(245,240,232,0.35); letter-spacing:0.1em; text-transform:uppercase;">Alabama's #1 Golf Destination · Ranked Top 100 in the U.S.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SCHEDULE OF EVENTS -->
+<section id="schedule">
+  <p class="section-eyebrow">June 26–28, 2026</p>
+  <h2 class="section-title">Schedule of Events</h2>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+
+    <!-- FRIDAY -->
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:12px; padding:1.5rem;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--cream); margin-bottom:0.25rem;">Friday, June 26</div>
+      <div style="font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; font-weight:500;">Arrival Day</div>
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">12:30 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Tee Time #1</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">12:40 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Tee Time #2</span>
+        </div>
+        <div style="height:1px; background:rgba(200,168,75,0.1);"></div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">4:00 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Check-in to Parker Lodge begins</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">7:30 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Steak dinner at Parker Lodge <span style="color:rgba(245,240,232,0.4); font-size:0.78rem;">(approx.)</span></span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">9:00 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Meet at 17th hole tee box</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SATURDAY -->
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:12px; padding:1.5rem;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--cream); margin-bottom:0.25rem;">Saturday, June 27</div>
+      <div style="font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; font-weight:500;">Round Day</div>
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">Morning</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Round 1</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">Lunch</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Grab &amp; Go lunch at Pro Shop</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">Afternoon</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Round 2</span>
+        </div>
+        <div style="height:1px; background:rgba(200,168,75,0.1);"></div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">6:30 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">19th Hole cocktails <span style="color:rgba(245,240,232,0.4); font-size:0.78rem;">(approx.)</span></span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">8:00 PM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Pizzas at Parker Lodge</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">Evening</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Commence shenanigans</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:12px; padding:1.5rem;">
+      <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--cream); margin-bottom:0.25rem;">Sunday, June 28</div>
+      <div style="font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; font-weight:500;">Departure Day</div>
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">Morning</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Depart at your earliest convenience</span>
+        </div>
+        <div style="display:grid; grid-template-columns:80px 1fr; gap:0.75rem; align-items:start;">
+          <span style="font-size:0.78rem; color:var(--gold); font-weight:600;">11:00 AM</span>
+          <span style="font-size:0.875rem; color:rgba(245,240,232,0.85);">Must leave by this time</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ROSTER / TEAMS -->
+<section id="roster">
+  <p class="section-eyebrow">The Field</p>
+  <h2 class="section-title">Teams & Format</h2>
+
+  <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:10px; padding:1.5rem 1.75rem; margin-bottom:2rem; max-width:680px;">
+    <p class="section-eyebrow" style="margin-bottom:0.5rem;">Game Format</p>
+    <p style="font-size:0.975rem; color:rgba(245,240,232,0.8); line-height:1.8;">Two teams of 8 will compete in a net, best-ball format over 36 holes. Additional gambling within each foursome is not required, but encouraged.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem;">
+
+    <!-- TEAM 1 -->
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--cream); margin-bottom:1rem; display:flex; align-items:center; gap:0.75rem;">
+        Team 1
+        <span style="font-size:0.68rem; font-family:'Inter',sans-serif; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; background:rgba(74,124,47,0.2); color:var(--green-light); border:1px solid rgba(74,124,47,0.3); padding:0.2rem 0.5rem; border-radius:4px;">Total HCP 99.3</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.6rem;">
+
+        <div class="player-card">
+          <div class="player-initials">CD</div>
+          <div><div class="player-name">Carl Diffee</div><div class="player-hcp">HCP 2.6</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">JA</div>
+          <div><div class="player-name">Jacob Adkins</div><div class="player-hcp">HCP 3.8</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">CA</div>
+          <div><div class="player-name">Conner Adkins</div><div class="player-hcp">HCP 4.0</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">SB</div>
+          <div><div class="player-name">Scott Burnett</div><div class="player-hcp">HCP 7.5</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">CB</div>
+          <div><div class="player-name">Chapman Bryant</div><div class="player-hcp">HCP 10.0</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">BC</div>
+          <div><div class="player-name">Bryce Claybrook</div><div class="player-hcp">HCP 17.4</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">CH</div>
+          <div><div class="player-name">Cruz Heath</div><div class="player-hcp">HCP 27.0</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">WR</div>
+          <div><div class="player-name">Will Rhea</div><div class="player-hcp">HCP 27.0</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TEAM 2 -->
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--cream); margin-bottom:1rem; display:flex; align-items:center; gap:0.75rem;">
+        Team 2
+        <span style="font-size:0.68rem; font-family:'Inter',sans-serif; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; background:rgba(200,168,75,0.12); color:var(--gold-light); border:1px solid rgba(200,168,75,0.2); padding:0.2rem 0.5rem; border-radius:4px;">Total HCP 99.3</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.6rem;">
+
+        <div class="player-card">
+          <div class="player-initials">AR</div>
+          <div><div class="player-name">Alden Rhian</div><div class="player-hcp">HCP 4.2</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">GJ</div>
+          <div><div class="player-name">Gray Jenkins</div><div class="player-hcp">HCP 7.0</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">ZJ</div>
+          <div><div class="player-name">Zac Jenkins</div><div class="player-hcp">HCP 10.0</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">TM</div>
+          <div><div class="player-name">Tanner McCraney</div><div class="player-hcp">HCP 10.1</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">JA</div>
+          <div><div class="player-name">Jonathan Adkins</div><div class="player-hcp">HCP 11.6</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">LT</div>
+          <div><div class="player-name">Luke Tucker</div><div class="player-hcp">HCP 12.1</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">BA</div>
+          <div><div class="player-name">Brad Adkins</div><div class="player-hcp">HCP 17.3</div></div>
+        </div>
+        <div class="player-card">
+          <div class="player-initials">WS</div>
+          <div><div class="player-name">Webb Strickland</div><div class="player-hcp">HCP 27.0</div></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ROOMING -->
+<div class="full-bg-section">
+<section id="rooming">
+  <p class="section-eyebrow">Accommodations</p>
+  <h2 class="section-title">Rooming Assignments</h2>
+
+  <div style="margin-bottom:1.75rem;">
+    <a href="https://www.pursellfarms.com/accommodations/parker-lodge" target="_blank" style="display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; background:rgba(200,168,75,0.08); border:1px solid rgba(200,168,75,0.25); border-radius:8px; padding:0.75rem 1.25rem; transition: all 0.2s;" onmouseover="this.style.background='rgba(200,168,75,0.15)'" onmouseout="this.style.background='rgba(200,168,75,0.08)'">
+      <span style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--gold);">Parker Lodge</span>
+      <span style="font-size:0.72rem; color:rgba(245,240,232,0.4); letter-spacing:0.08em; text-transform:uppercase;">View Accommodations ↗</span>
+    </a>
+  </div>
+
+  <p style="font-size:0.875rem; color:rgba(245,240,232,0.5); margin-bottom:1.75rem;">All rooms have 2 queen beds unless noted.</p>
+  <div class="rooming-grid">
+
+    <div class="room-card">
+      <div class="room-num">Room 801</div>
+      <div class="room-players">
+        <span class="room-player">Tanner McCraney</span>
+        <span class="room-player">Chapman Bryant</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 802</div>
+      <div class="room-players">
+        <span class="room-player">Carl Diffee</span>
+        <span class="room-player">Luke Tucker</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 803</div>
+      <div class="room-players">
+        <span class="room-player">Webb Strickland</span>
+        <span class="room-player">Bryce Claybrook</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 804</div>
+      <div class="room-players">
+        <span class="room-player">Scott Burnett</span>
+        <span class="room-player">Will Rhea</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 805</div>
+      <div class="room-players">
+        <span class="room-player">Brad Adkins</span>
+        <span class="room-player">Jacob Adkins</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 806</div>
+      <div class="room-players">
+        <span class="room-player">Conner Adkins</span>
+        <span class="room-player">Jonathan Adkins</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 807 <span class="room-note">King + Sofa</span></div>
+      <div class="room-players">
+        <span class="room-player">Zac Jenkins</span>
+        <span class="room-player">Gray Jenkins</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-num">Room 808</div>
+      <div class="room-players">
+        <span class="room-player">Alden Rhian</span>
+        <span class="room-player">Cruz Heath</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<hr class="section-divider">
+
+<!-- TEE TIMES -->
+<section id="teetimes">
+  <p class="section-eyebrow">Schedule</p>
+  <h2 class="section-title">Tee Times</h2>
+
+  <div class="tee-day">
+    <div class="tee-day-header">
+      Friday, June 27
+      <span class="tee-day-date">Round 1</span>
+    </div>
+    <p class="tee-round-label">FarmLinks Golf Club · Morning Wave</p>
+
+    <div class="tee-section-header">Morning Round</div>
+    <div class="tee-groups">
+      <div class="tee-group">
+        <div class="tee-time">8:20 AM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Jacob Adkins</span>
+          <span class="tee-player-pill">Brad Adkins</span>
+          <span class="tee-player-pill">Conner Adkins</span>
+          <span class="tee-player-pill">Jonathan Adkins</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">8:30 AM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Chapman Bryant</span>
+          <span class="tee-player-pill">Scott Burnett</span>
+          <span class="tee-player-pill">Tanner McCraney</span>
+          <span class="tee-player-pill">Will Rhea</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">8:40 AM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Carl Diffee</span>
+          <span class="tee-player-pill">Zac Jenkins</span>
+          <span class="tee-player-pill">Gray Jenkins</span>
+          <span class="tee-player-pill">Luke Tucker</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">8:50 AM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Alden Rhian</span>
+          <span class="tee-player-pill">Bryce Claybrook</span>
+          <span class="tee-player-pill">Cruz Heath</span>
+          <span class="tee-player-pill">Webb Strickland</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tee-section-header">Afternoon Round</div>
+    <div class="tee-groups">
+      <div class="tee-group">
+        <div class="tee-time">2:00 PM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Brad Adkins</span>
+          <span class="tee-player-pill">Conner Adkins</span>
+          <span class="tee-player-pill">Jonathan Adkins</span>
+          <span class="tee-player-pill">Scott Burnett</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">2:10 PM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Zac Jenkins</span>
+          <span class="tee-player-pill">Gray Jenkins</span>
+          <span class="tee-player-pill">Tanner McCraney</span>
+          <span class="tee-player-pill">Webb Strickland</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">2:20 PM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Alden Rhian</span>
+          <span class="tee-player-pill">Bryce Claybrook</span>
+          <span class="tee-player-pill">Luke Tucker</span>
+          <span class="tee-player-pill">Carl Diffee</span>
+        </div>
+      </div>
+      <div class="tee-group">
+        <div class="tee-time">2:30 PM</div>
+        <div class="tee-players">
+          <span class="tee-player-pill">Jacob Adkins</span>
+          <span class="tee-player-pill">Chapman Bryant</span>
+          <span class="tee-player-pill">Cruz Heath</span>
+          <span class="tee-player-pill">Will Rhea</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<hr class="section-divider">
+
+<!-- COURSE -->
+<div class="full-bg-section">
+<section id="course">
+  <p class="section-eyebrow">FarmLinks Golf Club</p>
+  <h2 class="section-title">The Course</h2>
+
+  <div class="course-header">
+    <div>
+      <p class="course-subtitle">Hurdzan-Fry Environmental Golf Design · Sylacauga, Alabama</p>
+      <p class="course-description">Gently sculpted from three generations of Pursell family farmland, FarmLinks is Alabama's #1 ranked golf course and a top-100 course in the United States. Dramatic elevation changes, pristine fairways, and immaculate greens — every hole tells a piece of the land's history, from marble quarry rail lines to Civil War encampments to Prohibition-era whiskey stills. This is a course that rewards local knowledge and punishes overconfidence. Each hole has a name and a story. Learn both.</p>
+      <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="badge badge-gold">#1 All-Access Alabama</span>
+        <span class="badge badge-gold">Golfweek Top 100</span>
+        <span class="badge badge-gold">Golf Digest Top 75 Resorts</span>
+      </div>
+    </div>
+    <div class="course-stats">
+      <div class="course-stat">
+        <span class="course-stat-val">72</span>
+        <span class="course-stat-label">Par</span>
+      </div>
+      <div class="course-stat">
+        <span class="course-stat-val">18</span>
+        <span class="course-stat-label">Holes</span>
+      </div>
+      <div class="course-stat">
+        <span class="course-stat-val">7,000+</span>
+        <span class="course-stat-label">Yards</span>
+      </div>
+      <div class="course-stat">
+        <span class="course-stat-val">1999</span>
+        <span class="course-stat-label">Est.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:10px; padding:1.25rem;">
+      <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; font-weight:600;">Copperhead Tees</div>
+      <table style="width:100%; font-size:0.875rem; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Par</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">72</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Yardage</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">6,929</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Course Rating</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">73.1</td>
+        </tr>
+        <tr>
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Slope</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">136</td>
+        </tr>
+      </table>
+    </div>
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:10px; padding:1.25rem;">
+      <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; font-weight:600;">Whitetail Tees</div>
+      <table style="width:100%; font-size:0.875rem; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Par</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">72</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Yardage</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">6,345</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(200,168,75,0.1);">
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Course Rating</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">70.3</td>
+        </tr>
+        <tr>
+          <td style="color:rgba(245,240,232,0.45); padding:0.4rem 0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;">Slope</td>
+          <td style="text-align:right; color:var(--cream); font-weight:500; padding:0.4rem 0;">131</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <p style="font-size:0.78rem; color:rgba(245,240,232,0.35); margin-bottom:1.5rem; letter-spacing:0.06em; text-transform: uppercase;">Click any hole to expand the story & playing tips</p>
+
+  <div class="holes-grid">
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">01</div>
+        <div class="hole-info">
+          <div class="hole-name">"The Farm"</div>
+          <div class="hole-meta"><span class="hole-par">Par 5</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">David Pursell designed this sprawling opener to give golfers a generous start. Many years ago, this land grew everything from cotton to corn.</div>
+      <div class="hole-tip">Wide open off the tee — take your full swing and find the fairway. Excellent hole to get off to a good start before the course tightens up. Par here is money in the bank.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">02</div>
+        <div class="hole-info">
+          <div class="hole-name">"Sawmill"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">When the Eureka Railroad came through, it stopped here to pick up lumber. The land was rich in hardwoods and pines. A small spring near the green powered the old sawmill operations and also refilled steam engines heading to the Eureka Marble Quarry.</div>
+      <div class="hole-tip">Look for the little spring to the right of the cart path near the green — it's a piece of history. Play the hole straight and don't get cute. The approach demands precision.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">03</div>
+        <div class="hole-info">
+          <div class="hole-name">"Baby Rattler"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">In 2012, David Pursell, his twin sons, and son-in-law came upon a baby rattlesnake coiled on the Copperhead tee — rattle shaking, ready to strike. Martin Pursell's 5-iron took care of it.</div>
+      <div class="hole-tip">Watch your step in the rough — this isn't just a fun story. The Alabama heat means reptiles are active in late June. Play to the fat part of the fairway and stay on the cart paths when you can.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">04</div>
+        <div class="hole-info">
+          <div class="hole-name">"Lower 40"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Every farm has its "lower 40" — that long, expansive field requiring a full day's work. This is the course's #1 handicap hole. Roll up your sleeves.</div>
+      <div class="hole-tip">This is the hardest hole on the course. Don't try to be a hero — make smart decisions, accept a bogey if it comes, and move on. The hole is won or lost off the tee.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">05</div>
+        <div class="hole-info">
+          <div class="hole-name">"Hang Time"</div>
+          <div class="hole-meta"><span class="hole-par">Par 3</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">A 172-vertical-foot drop from the tips to the green. Hit it and watch it hang in the air for what feels like forever before the long plunge down.</div>
+      <div class="hole-tip">Club down significantly — the elevation drop makes this play much shorter than the yardage suggests. Aim center-green, don't chase pins, and enjoy the view on the way down. One of the most visually spectacular holes in Alabama.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">06</div>
+        <div class="hole-info">
+          <div class="hole-name">"Bootlegger"</div>
+          <div class="hole-meta"><span class="hole-par">Par 5</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">During Prohibition and long after, the woods right of the fairway were full of whiskey stills. Rusted remains and old still parts are still scattered in the trees today.</div>
+      <div class="hole-tip">Don't slice it right — not because of out-of-bounds, but because of what you'll find in there. Worth a look if you hit it in the woods, but don't spend too long. Play the par 5 straight, in three shots, and move on.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">07</div>
+        <div class="hole-info">
+          <div class="hole-name">"Big Daddy"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">An old farmhouse once stood on the small bluff to the left of the green behind the tire swing — lonely, tucked against the woods, like something out of a ghost story.</div>
+      <div class="hole-tip">The bluff left of the green is more intimidating than it looks. A controlled tee shot to the center of the fairway sets up a straightforward approach. Don't overcook it trying to get close — par is a great result.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">08</div>
+        <div class="hole-info">
+          <div class="hole-name">"Back It Up"</div>
+          <div class="hole-meta"><span class="hole-par">Par 3</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Inspired by a hole at Black Diamond Ranch in Florida. When the tee complex was originally positioned closer to the green, David Pursell looked at it, shook his head, and said, "Back it up." And so they did.</div>
+      <div class="hole-tip">Grab enough club, but looks can be deceiving — don't take too much. The hole is long, downhill, and open. Most will miss the green but leave a reasonable chip. Take your par and keep moving.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">09</div>
+        <div class="hole-info">
+          <div class="hole-name">"Desoto"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">In 1540, Hernando de Soto and his band of fortune-seeking Spaniards passed through here searching for El Dorado, following the Coosa River. It's believed they camped for a winter in these very woods before heading southwest. Breastwork remains from their encampment can still be seen in the trees.</div>
+      <div class="hole-tip">A great hole to finish the front nine strong. Solid drive sets up a manageable approach. Don't lose focus thinking about the history — there's still nine holes to play.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">10</div>
+        <div class="hole-info">
+          <div class="hole-name">"Christine"</div>
+          <div class="hole-meta"><span class="hole-par">Par 5</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Named for Lake Christine and the grand matriarch of the Pursell family. You can almost imagine her — fists up, knuckles shaking — reminding you not to let your guard down.</div>
+      <div class="hole-tip">The lake is right off the tee and it demands respect. Don't get overconfident after a good front nine — this hole has humbled many. Lay up if needed, and play the par 5 in three disciplined shots.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">11</div>
+        <div class="hole-info">
+          <div class="hole-name">"Lonely Pine"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">A lone pine stands centered in the fairway, put there for a reason. It's not uncommon for it to deliver a nasty kick.</div>
+      <div class="hole-tip">Aim just left of the lone pine on your tee shot — it's the ideal line and avoids the kick. The pine is a landmark, not an obstacle, if you play it correctly. Don't challenge it head-on.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">12</div>
+        <div class="hole-info">
+          <div class="hole-name">"Eureka Railroad"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">The old Eureka railroad tracks once cut through the property hauling pure white Sylacauga marble. You can still barely make out the old rail bed — it cuts from the northeast side of the green directly through the right greenside bunker and out toward the office building to the south.</div>
+      <div class="hole-tip">The right bunker cuts right through where the old rail bed ran — a beautiful piece of design using the land's history. Play to the left side of the fairway to take the bunker out of play on your approach.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">13</div>
+        <div class="hole-info">
+          <div class="hole-name">"Go For It"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Not much of a backstory here. This is the "Just Do It" hole. Commit and execute.</div>
+      <div class="hole-tip">FarmLinks is giving you permission. Pick your target, trust your swing, and go. This is one of the more aggressive holes on the course — reward aggression with a birdie opportunity.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">14</div>
+        <div class="hole-info">
+          <div class="hole-name">"Swamp"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">This is the course's low country — the most level hole on the property. Pennywinkle Creek runs through the tree line to the left, home to every creature the Alabama South has to offer. The designers strongly suggest: if you hook it left into the woods, leave it there.</div>
+      <div class="hole-tip">This is not a joke — do not go looking for your ball in those woods. Lose a stroke, play a provisional, and stay safe. The fairway is generous; keep it in play and the hole is very manageable.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">15</div>
+        <div class="hole-info">
+          <div class="hole-name">"Showcase"</div>
+          <div class="hole-meta"><span class="hole-par">Par 3</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">A partner hole featuring specialized state-of-the-art turf varieties. The left bunker face features Discovery Bermuda — a type of Bermuda grass that only needs mowing once a year.</div>
+      <div class="hole-tip">Aim away from the left bunker — that Discovery Bermuda is more fascinating to look at than to play from. The green is receptive; take your par and appreciate the turf science on display.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">16</div>
+        <div class="hole-info">
+          <div class="hole-name">"Dana's Pick"</div>
+          <div class="hole-meta"><span class="hole-par">Par 4</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Architect Dana Fry's personal favorite on the course. One of the Hurdzan-Fry partners loved this hole enough to name it after himself.</div>
+      <div class="hole-tip">The fairway opens up nicely off the tee. Resist the temptation to cut the corner — the right side falls away sharply and the fairway bunker is positioned perfectly to catch anything too aggressive. Play left-center and stay out of trouble.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">17</div>
+        <div class="hole-info">
+          <div class="hole-name">"Big Gulp"</div>
+          <div class="hole-meta"><span class="hole-par">Par 3</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Like a giant 32-oz. cup, this body of water sits there yawning and waiting to be fed. It's a fairly easy hole — you just need to get the thought of hitting it fat out of your mind.</div>
+      <div class="hole-tip">The only thing standing between you and a good score is your own head. The yardage is what it is, the distance isn't deceiving, and the carry is manageable. Commit fully to your club selection and make a confident swing. Don't let the water talk you out of it.</div>
+    </div>
+
+    <div class="hole-card" onclick="this.classList.toggle('expanded')">
+      <div class="hole-card-header">
+        <div class="hole-num">18</div>
+        <div class="hole-info">
+          <div class="hole-name">"Orchards"</div>
+          <div class="hole-meta"><span class="hole-par">Par 5</span></div>
+        </div>
+        <span class="hole-toggle">Details ↓</span>
+      </div>
+      <div class="hole-story">Long before this was a golf course, this expansive closing hole was home to sprawling apple and fruit orchards. Hamilton Place — the original Pursell family farmhouse built before the Civil War — stands just across the road from the tee box, visible to your left throughout the hole.</div>
+      <div class="hole-tip">End the round strong. Hamilton Place watching over your left shoulder adds some gravitas to the finishing hole. The par 5 is reachable in two — give yourself a birdie chance to close out the round. Whatever happens, you'll remember playing in the shadow of a pre-Civil War farmhouse.</div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<hr class="section-divider">
+
+<section id="weather" style="scroll-margin-top: 80px;">
+  <p class="section-eyebrow">Sylacauga, Alabama</p>
+  <h2 class="section-title">Trip Weather Forecast</h2>
+  <p style="font-size:0.875rem; color:rgba(245,240,232,0.5); margin-bottom:2rem;">Live 3-day forecast for June 26–28. Updates automatically as the trip approaches.</p>
+
+  <div id="weather-container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,168,75,0.15); border-radius:10px; padding:1.5rem; text-align:center;">
+      <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.4); margin-bottom:0.5rem;">Loading…</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.72rem; color:rgba(245,240,232,0.25); letter-spacing:0.05em;">Forecast data via Open-Meteo · Refreshes on page load</p>
+</section>
+
+<script>
+(function() {
+  const tripDates = ['2026-06-26','2026-06-27','2026-06-28'];
+  const dayLabels = { '2026-06-26': 'Fri, Jun 26', '2026-06-27': 'Sat, Jun 27', '2026-06-28': 'Sun, Jun 28' };
+  const daySubLabels = { '2026-06-26': 'Arrival Day', '2026-06-27': 'Round Day', '2026-06-28': 'Departure Day' };
+
+  const wmoDesc = code => {
+    if (code === 0) return { label: 'Clear', icon: '☀️' };
+    if (code <= 2) return { label: 'Partly Cloudy', icon: '⛅' };
+    if (code === 3) return { label: 'Overcast', icon: '☁️' };
+    if (code <= 49) return { label: 'Foggy', icon: '🌫️' };
+    if (code <= 55) return { label: 'Drizzle', icon: '🌦️' };
+    if (code <= 65) return { label: 'Rain', icon: '🌧️' };
+    if (code <= 77) return { label: 'Snow', icon: '❄️' };
+    if (code <= 82) return { label: 'Rain Showers', icon: '🌦️' };
+    if (code <= 99) return { label: 'Thunderstorms', icon: '⛈️' };
+    return { label: 'Mixed', icon: '🌤️' };
+  };
+
+  const rainColor = pct => {
+    if (pct < 20) return '#6aaa3a';
+    if (pct < 50) return '#c8a84b';
+    return '#c0432a';
+  };
+
+  // Always fetch from today through end of trip to maximize available data
+  const today = new Date().toISOString().split('T')[0];
+  const startDate = today < '2026-06-26' ? today : '2026-06-26';
+
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=33.1732&longitude=-86.2516&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode,windspeed_10m_max&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=America%2FChicago&start_date=${startDate}&end_date=2026-06-28`)
+    .then(r => r.json())
+    .then(data => {
+      const d = data.daily;
+      const container = document.getElementById('weather-container');
+      container.innerHTML = '';
+      tripDates.forEach(date => {
+        const idx = d.time.indexOf(date);
+        let html;
+        if (idx === -1) {
+          html = `
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:1.5rem;text-align:center;">
+              <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:0.5rem;">${daySubLabels[date]}</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#c8a84b;margin-bottom:0.25rem;">${dayLabels[date]}</div>
+              <div style="font-size:0.82rem;color:rgba(245,240,232,0.35);margin-top:1rem;">Forecast not yet available — check back closer to the trip.</div>
+            </div>`;
+        } else {
+          const wmo = wmoDesc(d.weathercode[idx]);
+          const high = Math.round(d.temperature_2m_max[idx]);
+          const low = Math.round(d.temperature_2m_min[idx]);
+          const rain = d.precipitation_probability_max[idx];
+          const wind = Math.round(d.windspeed_10m_max[idx]);
+          html = `
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,168,75,0.15);border-radius:10px;padding:1.5rem;text-align:center;">
+              <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:0.4rem;">${daySubLabels[date]}</div>
+              <div style="font-family:'Playfair Display',serif;font-size:1rem;color:#c8a84b;margin-bottom:0.75rem;">${dayLabels[date]}</div>
+              <div style="font-size:2.5rem;margin-bottom:0.5rem;" aria-label="${wmo.label}">${wmo.icon}</div>
+              <div style="font-size:0.85rem;color:rgba(245,240,232,0.6);margin-bottom:1rem;">${wmo.label}</div>
+              <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1rem;">
+                <div>
+                  <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#f5f0e8;">${high}°</span>
+                  <span style="font-size:0.8rem;color:rgba(245,240,232,0.35);"> / ${low}°</span>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:center;gap:1.5rem;">
+                <div style="text-align:center;">
+                  <div style="font-size:1rem;font-weight:600;color:${rainColor(rain)};">${rain}%</div>
+                  <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(245,240,232,0.35);margin-top:0.15rem;">Rain</div>
+                </div>
+                <div style="text-align:center;">
+                  <div style="font-size:1rem;font-weight:600;color:rgba(245,240,232,0.7);">${wind} mph</div>
+                  <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(245,240,232,0.35);margin-top:0.15rem;">Wind</div>
+                </div>
+              </div>
+            </div>`;
+        }
+        container.insertAdjacentHTML('beforeend', html);
+      });
+    })
+    .catch(() => {
+      document.getElementById('weather-container').innerHTML =
+        '<p style="color:rgba(245,240,232,0.4);font-size:0.875rem;">Unable to load forecast. Check back closer to the trip.</p>';
+    });
+})();
+</script>
+
+<footer>
+  <p>Pursell Farms 2026 · <a href="https://www.pursellfarms.com/golf" target="_blank">FarmLinks Golf Club</a> · Sylacauga, Alabama · June 26–28, 2026</p>
+</footer>
+
+</body>
+</html>
